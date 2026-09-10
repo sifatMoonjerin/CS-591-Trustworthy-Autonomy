@@ -30,6 +30,8 @@ $$
     <figcaption>Figure 1: Reachable sets using interval matrix method up to T = 5</figcaption>
 </figure>
 
+<hr>
+<br>
 
 <figure>
     <img src="images/method_1_t15.png" alt="Reachable sets using interval matrix method up to T = 15">
@@ -43,6 +45,8 @@ $$
     <figcaption>Figure 3: Reachable sets using vertex shooting method up to T = 5</figcaption>
 </figure>
 
+<hr>
+<br>
 
 <figure>
     <img src="images/method_2_t15.png" alt="Reachable sets using vertex shooting method up to T = 15">
@@ -58,6 +62,9 @@ Trajectories from five random points from the initial set are plotted alongside 
     <img src="images/random_points_t05.png" alt="Random point trajectories up to T = 5">
     <figcaption>Figure 5: Random point trajectories and their corresponding reachable sets up to T = 5</figcaption>
 </figure>
+
+<hr>
+<br>
 
 <figure>
     <img src="images/random_points_t15.png" alt="Random point trajectories up to T = 15">
