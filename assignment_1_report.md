@@ -7,12 +7,16 @@ CWID: 12636290
 
 ## Answer 1
 
+The state transition matrix of the given system is the following.
+
 $$
 A = \begin{bmatrix}
 1.2 & 0.2 \\
 0.7 & 1.2
 \end{bmatrix}
 $$
+
+The initial state is the following interval set.
 
 $$
 z[0] = \begin{bmatrix}
@@ -22,6 +26,8 @@ z[0] = \begin{bmatrix}
 $$
 
 ## Answer 2
+
+Two methods are implemented to compute the set of states reached by the system.
 
 ### Method 1: Interval Matrix Method
 
@@ -54,7 +60,7 @@ $$
 
 ## Answer 3
 
-Trajectories from five random points from the initial set are plotted alongside reachable sets computed via the vertex shooting method.
+Five random initial points are selected from within the initial set, and their trajectories are plotted alongside the reachable sets computed using the vertex shooting method. The points are shown in different colors, with each point retaining the same color across all time steps. The points are not connected by lines to improve the clarity of the plot.
 
 <figure>
     <img src="images/random_points_t05.png" alt="Random point trajectories up to T = 5">
