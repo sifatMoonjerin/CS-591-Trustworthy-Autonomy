@@ -54,15 +54,6 @@ def solve_graph(graph, colors = None):
             )
         ) # connected nodes do not have the same color
 
-    # if s.check() == sat:
-    #     print("Solution found:")
-    #     model = s.model()
-    #     for v in vertices:
-    #         for c in colors:
-    #             if model.evaluate(vertex_color_variables[(v, c)]):
-    #                 print(f"{v} = {color_map[c]}")
-    # else:
-    #     print("No solution exists")
 
     if s.check() == sat:
         model = s.model()
