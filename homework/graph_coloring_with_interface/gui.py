@@ -10,14 +10,14 @@ class GraphGUI:
     def __init__(self):
         self.root = tk.Tk()
         self.root.title("4-Color Graph")
-        self.root.geometry("1200x1000")
+        self.root.geometry("600x400")
 
         # Graph data
         self.graph = Graph()
 
         # GUI settings
-        self.vertex_radius = 40
-        self.min_vertex_distance = 50
+        self.vertex_radius = 20
+        self.min_vertex_distance = 30
         self.next_vertex_id = 0
         self.selected_vertex = None
         self.vertex_items = {}
@@ -25,8 +25,8 @@ class GraphGUI:
         # Canvas
         self.canvas = tk.Canvas(
             self.root,
-            width=1200,
-            height=900,
+            width=600,
+            height=350,
             bg="white"
         )
         self.canvas.pack()

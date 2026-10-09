@@ -16,6 +16,9 @@ def solve_graph(graph, colors = None):
         for c in colors:
             vertex_color_variables[(v, c)] = Bool(f"V_{v}_{c}")
 
+    # s.add(vertex_color_variables[('a', 'r')])  # Fix the color of the first vertex to 'r'
+    # s.add(vertex_color_variables[('a', 'g')])  # Fix the color of the first vertex to 'g'
+
     for v in vertices:
         s.add(
             Or(
@@ -24,19 +27,19 @@ def solve_graph(graph, colors = None):
         ) # Each vertex has at least one color
 
 
-        # s.add(
-        #     And(
-        #         *(
-        #             Or(
-        #                 Not(vertex_color_variables[(v, c1)]), 
-        #                 Not(vertex_color_variables[(v, c2)])
-        #             ) 
-        #             for i, c1 in enumerate(colors) 
-        #             for j, c2 in enumerate(colors) 
-        #             if i < j
-        #         )
-        #     )
-        # ) # Each vertex has only one color
+        s.add(
+            And(
+                *(
+                    Or(
+                        Not(vertex_color_variables[(v, c1)]), 
+                        Not(vertex_color_variables[(v, c2)])
+                    ) 
+                    for i, c1 in enumerate(colors) 
+                    for j, c2 in enumerate(colors) 
+                    if i < j
+                )
+            )
+        ) # Each vertex has only one color
 
 
     for u, v in edges:
@@ -63,6 +66,8 @@ def solve_graph(graph, colors = None):
 
     if s.check() == sat:
         model = s.model()
+        print("Solution found:")
+        print(s.model())
         return {
             v: c for v in graph.vertices 
             for c in colors 
